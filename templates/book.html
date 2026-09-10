@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ chapter.title }} | {{ book_title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='book.css') }}">
+</head>
+<body{% if chapter.kind == 'cover' %} class="closed"{% endif %}>
+<a class="skip" href="#spread">Skip to the page</a>
+<main class="desk">
+  <div class="book" id="book" data-slugs='{{ chapters | map(attribute="slug") | list | tojson }}'>
+    {% include "spread.html" %}
+  </div>
+  <nav class="turn" aria-label="Turn the page">
+    {% if prev %}<a class="turn-back" href="{{ url_for('cover') if prev.slug == 'cover' else url_for('chapter', slug=prev.slug) }}" rel="prev">Previous page</a>{% endif %}
+    {% if next %}<a class="turn-forward" href="{{ url_for('chapter', slug=next.slug) }}" rel="next">Next page</a>{% endif %}
+  </nav>
+</main>
+<script src="{{ url_for('static', filename='book.js') }}" defer></script>
+</body>
+</html>

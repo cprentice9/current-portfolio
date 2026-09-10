@@ -1,0 +1,56 @@
+<section class="spread kind-{{ chapter.kind }}" id="spread" data-slug="{{ chapter.slug }}" data-index="{{ index }}" data-title="{{ chapter.title }} | {{ book_title }}">
+{% if chapter.kind == 'cover' %}
+  <div class="page cover-board" aria-hidden="true"></div>
+  <div class="page cover-front">
+    <div class="stamp">
+      <h1>{{ book_title }}</h1>
+      <p class="subtitle">{{ book_subtitle }}</p>
+      <a class="open" href="{{ url_for('chapter', slug='contents') }}">Open the book</a>
+    </div>
+  </div>
+{% else %}
+  <div class="page verso">
+    <p class="running-head">{{ book_title }}</p>
+    <div class="text">
+    {% if chapter.kind == 'contents' %}
+      <h1>Contents</h1>
+      <ol class="toc">
+      {% for c in chapters if c.kind not in ('cover', 'contents') %}
+        <li><a href="{{ url_for('chapter', slug=c.slug) }}"><span class="toc-title">{{ c.title }}</span><span class="toc-folio">{{ 2 * loop.index + 1 }}</span></a></li>
+      {% endfor %}
+      </ol>
+    {% else %}
+      {% if chapter.kind == 'project' %}<p class="chapter-number">Project {{ index - 2 }}</p>{% endif %}
+      <h1>{{ chapter.title }}</h1>
+      {% if chapter.deck %}<p class="deck">{{ chapter.deck }}</p>{% endif %}
+      {% for para in chapter.left %}
+      <p{% if loop.first %} class="opener"{% endif %}>{{ para }}</p>
+      {% endfor %}
+    {% endif %}
+    </div>
+    <p class="folio">{{ folio }}</p>
+  </div>
+  <div class="page recto">
+    <p class="running-head">{{ chapter.title }}</p>
+    <div class="text">
+    {% if chapter.kind == 'contents' %}
+      <p class="opener">Each project has its own spread. The colophon at the back says how the book was made and where to find me.</p>
+    {% else %}
+      {% for para in chapter.right %}<p>{{ para }}</p>{% endfor %}
+      {% if chapter.kind == 'project' %}
+      <dl class="notes">
+        <dt>Built with</dt><dd>{{ chapter.stack }}</dd>
+        <dt>Source</dt><dd><a href="{{ chapter.repo }}">{{ chapter.repo.replace('https://github.com/', '') }}</a></dd>
+      </dl>
+      {% endif %}
+      {% if chapter.links %}
+      <ul class="links">
+        {% for label, href in chapter.links %}<li><a href="{{ href }}">{{ label }}</a></li>{% endfor %}
+      </ul>
+      {% endif %}
+    {% endif %}
+    </div>
+    <p class="folio">{{ folio + 1 }}</p>
+  </div>
+{% endif %}
+</section>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page missing | {{ book_title }}</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='book.css') }}">
+</head>
+<body>
+<main class="desk">
+  <div class="book">
+    <section class="spread kind-prose">
+      <div class="page verso">
+        <p class="running-head">{{ book_title }}</p>
+        <div class="text">
+          <h1>This page was torn out</h1>
+          <p class="opener">There is no chapter at that address.</p>
+          <p><a href="{{ url_for('chapter', slug='contents') }}">Back to the contents</a></p>
+        </div>
+      </div>
+      <div class="page recto"><p class="running-head">Page missing</p></div>
+    </section>
+  </div>
+</main>
+</body>
+</html>
