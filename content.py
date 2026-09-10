@@ -10,19 +10,20 @@ ABOUT = [
     "pages, the deploys, and the parts of the front end that nobody else "
     "wants to touch. Python is the language I think in. Flask is what I reach "
     "for when a thing needs to be small.",
-    "I did not come to this the usual way. I studied history at the "
-    "University of North Texas, which taught me to read closely, to care "
-    "about where a source came from, and to write for someone who was not in "
-    "the room. Then I finished Devmountain's web development program in "
-    "2022 and started shipping.",
-    "The history degree still shows. I keep a library of primary sources "
-    "with the translator and license as first-class fields, and I would "
-    "rather write a commit message a stranger can read a year later than a "
-    "clever one. The engineering habits are newer and just as stubborn: tests "
-    "that run against the real thing, pages that work without JavaScript, "
-    "and the least code that fully solves the problem.",
-    "When a problem calls for it I reach for PyTorch. When it does not, I "
-    "do not.",
+    "I have been writing code for a living since 2012, first on the front "
+    "end and on white-label software for the company that became DKM, later "
+    "on everything. Devmountain's web development program in 2022 filled in "
+    "the parts I had taught myself around.",
+    "In July 2026 I finished a history degree at the University of North "
+    "Texas. It taught me to read closely, to care about where a source came "
+    "from, and to write for someone who was not in the room. It still shows: "
+    "I keep a library of primary sources with the translator and license as "
+    "first-class fields, and I would rather write a commit message a "
+    "stranger can read a year later than a clever one.",
+    "The engineering habits are just as stubborn: tests that run against "
+    "the real thing, pages that work without JavaScript, and the least code "
+    "that fully solves the problem. When a problem calls for it I reach for "
+    "PyTorch. When it does not, I do not.",
 ]
 
 PROJECTS = [
