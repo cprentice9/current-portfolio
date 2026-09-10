@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ name }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
+</head>
+<body>
+<main class="page">
+  <p class="running-head">{{ name }}</p>
+
+  <header class="title">
+    <h1>{{ name }}</h1>
+    <p class="tagline">{{ tagline }}</p>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    {% for para in about %}
+    <p{% if loop.first %} class="opener"{% endif %}>{{ para }}</p>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    {% for project in projects %}
+    <article class="project">
+      <h3>{{ project.title }}</h3>
+      <p class="deck">{{ project.deck }}</p>
+      <p>{{ project.body }}</p>
+      <p class="notes">Built with {{ project.stack }}. Source at <a href="{{ project.repo }}">{{ project.repo.replace('https://github.com/', '') }}</a>.</p>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>If you want to talk about any of this, these reach me.</p>
+    <ul class="links">
+      {% for label, href in links %}<li><a href="{{ href }}">{{ label }}</a></li>{% endfor %}
+    </ul>
+  </section>
+
+  <p class="colophon">Set in EB Garamond. Served by Flask.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,120 @@
+:root {
+  --paper: #f1ede2;
+  --paper-deep: #e4ddcc;
+  --ink: #221e18;
+  --ink-soft: #625a4e;
+  --oxblood: #7a2e2e;
+  --rule: #cfc6b3;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+
+/* The page: paper color under a tiled grain texture. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background-color: var(--paper);
+  /* paper.png is a translucent brown grain tile, so the texture sits on the paper color underneath.
+     Grain at half strength: the alpha channel centers on 128, and blend lets the paper show through. */
+  background-image: url("paper.png");
+  background-blend-mode: soft-light;
+}
+
+/* Faint darkening toward the edges, like a scanned leaf. Fixed so it does not scroll with the text. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(120, 95, 60, 0.18) 100%);
+}
+
+.page {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+a { color: var(--oxblood); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; }
+
+.running-head {
+  margin: 0 0 4rem;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.title { text-align: center; margin: 0 0 3.5rem; }
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5rem;
+}
+.tagline { font-style: italic; color: var(--ink-soft); margin: 0; }
+
+section { margin: 0 0 3.5rem; }
+
+h2 {
+  font-weight: 500;
+  font-size: 1.05rem;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--oxblood);
+  text-align: center;
+  margin: 0 0 1.6rem;
+}
+h2::before, h2::after { content: "\2022"; padding: 0 0.7em; color: var(--rule); }
+
+h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  margin: 0 0 0.3rem;
+}
+
+p { margin: 0 0 1em; text-wrap: pretty; }
+p + p { text-indent: 1.6em; margin-top: -0.6em; }
+
+.opener::first-letter {
+  float: left;
+  font-size: 3.7em;
+  line-height: 0.82;
+  padding: 0.08em 0.12em 0 0;
+  color: var(--oxblood);
+  font-weight: 500;
+}
+
+.project { margin: 0 0 2.4rem; }
+.project .deck { font-style: italic; color: var(--ink-soft); }
+.project p + p { text-indent: 0; margin-top: 0; }
+.notes { font-size: 1.05rem; color: var(--ink-soft); }
+
+.links { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.8rem; }
+
+.colophon {
+  margin: 3rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 600px) {
+  body { font-size: 1.1rem; }
+  .page { padding: 2rem 1.25rem 4rem; }
+  .running-head { margin-bottom: 2.5rem; }
+  h1 { font-size: 2.1rem; }
+}
