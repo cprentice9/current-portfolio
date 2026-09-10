@@ -28,10 +28,6 @@ ABOUT = [
     "I keep a library of primary sources with the translator and license as "
     "first-class fields, and I would rather write a commit message a "
     "stranger can read a year later than a clever one.",
-    "The engineering habits are just as stubborn: tests that run against "
-    "the real thing, pages that work without JavaScript, and the least code "
-    "that fully solves the problem. When a problem calls for it I reach for "
-    "PyTorch. When it does not, I do not.",
 ]
 
 PROJECTS = [
