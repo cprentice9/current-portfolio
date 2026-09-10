@@ -10,6 +10,14 @@ ABOUT = [
     "pages, the deploys, and the parts of the front end that nobody else "
     "wants to touch. Python is the language I think in. Flask is what I reach "
     "for when a thing needs to be small.",
+    "The other half of my work is agentic engineering: building with coding "
+    "agents and building for them. I run Claude Code with subagents doing the "
+    "searching and grunt work while the design stays in one session, and I "
+    "write the hooks, skills, and working rules that keep those agents "
+    "honest. Byname, below, came out of that: a way to give a subagent a "
+    "name and call it back days later. I know where agents save time, where "
+    "they lie, and how to set up a review that catches the second before it "
+    "ships.",
     "I have been writing code for a living since 2012, first on the front "
     "end and on white-label software for the company that became DKM, later "
     "on everything. Devmountain's web development program in 2022 filled in "
