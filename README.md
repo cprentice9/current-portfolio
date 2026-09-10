@@ -1,6 +1,6 @@
 # current-portfolio
 
-A one-page portfolio set like a page from a book: paper texture across the whole page, EB Garamond, a drop cap, small-caps section heads. Flask serves it.
+My one page Flask portfolio.
 
 ## Run it
 
