@@ -12,7 +12,7 @@ def create_app():
             "default-src 'self'; "
             "style-src 'self' https://fonts.googleapis.com; "
             "font-src https://fonts.gstatic.com; "
-            "img-src 'self' data:"
+            "img-src 'self' https://avatars.githubusercontent.com"
         )
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Referrer-Policy"] = "same-origin"
@@ -24,6 +24,7 @@ def create_app():
             "index.html",
             name=content.NAME,
             tagline=content.TAGLINE,
+            portrait=content.PORTRAIT,
             about=content.ABOUT,
             projects=content.PROJECTS,
             links=content.LINKS,

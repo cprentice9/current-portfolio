@@ -54,6 +54,19 @@ a:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; }
 }
 
 .title { text-align: center; margin: 0 0 3.5rem; }
+/* Frontispiece: the author's portrait as a small plate above the title. */
+.portrait {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  outline: 1px solid var(--rule);
+  outline-offset: 4px;
+  object-fit: cover;
+  filter: sepia(0.35) contrast(0.95);
+}
 h1 {
   font-weight: 500;
   font-size: 2.6rem;

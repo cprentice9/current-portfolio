@@ -1,24 +1,45 @@
 """Everything written on the page."""
 
 NAME = "Connor Prentice"
-TAGLINE = "Software, mostly in Python, that I wanted for myself first."
+TAGLINE = "Django developer and full stack software engineer in Denton, Texas."
+PORTRAIT = "https://avatars.githubusercontent.com/u/60930043?v=4"
 
 ABOUT = [
-    "I build small, useful software and I like it when the seams show. "
-    "Most of what I make starts as a tool I wanted for myself: a name for "
-    "an anonymous process, a citation I did not want to format by hand, a "
-    "library of sources whose licenses I could trust.",
-    "I work mostly in Python, with Flask and Django on the server and plain "
-    "HTML, CSS, and JavaScript in front. When a problem calls for it I reach "
-    "for PyTorch. I prefer the least code that fully solves the problem, and "
-    "I would rather extend a pattern than invent one.",
-    "Outside of shipping features I care about the parts of software that "
-    "are easy to skip: tests that run against the real thing, pages that "
-    "work without JavaScript, and commit messages a stranger can read a "
-    "year later.",
+    "I am a Django developer. Most of my working hours go into one Django "
+    "project, the site behind DKM Artists, where I own the models, the admin "
+    "pages, the deploys, and the parts of the front end that nobody else "
+    "wants to touch. Python is the language I think in. Flask is what I reach "
+    "for when a thing needs to be small.",
+    "I did not come to this the usual way. I studied history at the "
+    "University of North Texas, which taught me to read closely, to care "
+    "about where a source came from, and to write for someone who was not in "
+    "the room. Then I finished Devmountain's web development program in "
+    "2022 and started shipping.",
+    "The history degree still shows. I keep a library of primary sources "
+    "with the translator and license as first-class fields, and I would "
+    "rather write a commit message a stranger can read a year later than a "
+    "clever one. The engineering habits are newer and just as stubborn: tests "
+    "that run against the real thing, pages that work without JavaScript, "
+    "and the least code that fully solves the problem.",
+    "When a problem calls for it I reach for PyTorch. When it does not, I "
+    "do not.",
 ]
 
 PROJECTS = [
+    {
+        "title": "DKM Artists",
+        "deck": "The Django site behind dkmartists.com. My main project.",
+        "stack": "Django, PostgreSQL, Render",
+        "repo": "https://github.com/cprentice9/song-submissions",
+        "body": "Artists submit songs, A&R accounts pick from the catalog, and "
+        "the DKM team runs shows, reviews, opportunities, and leaderboards "
+        "from custom admin pages. In August 2026 I replaced the original Node "
+        "app with one Django project: the rewrite kept every URL that "
+        "mattered, moved the data across with a migration script, and "
+        "deploys from main on Render. Before that I built the leaderboard "
+        "and sign-up flow for the RNR Cup, a contest with more than 2,500 "
+        "artists and celebrity judges.",
+    },
     {
         "title": "Byname",
         "deck": "Names for Claude Code subagents, and a way to call them back.",
@@ -50,17 +71,6 @@ PROJECTS = [
         "photocopy usually is not. So translator, translation year, and "
         "license code are first-class fields, not notes in a margin. A test "
         "suite checks that every record has a license a teacher can act on.",
-    },
-    {
-        "title": "DKM Artists",
-        "deck": "The site behind dkmartists.com, rebuilt from Node to Django.",
-        "stack": "Django, PostgreSQL, Render",
-        "repo": "https://github.com/cprentice9/song-submissions",
-        "body": "Artists submit songs, A&R accounts pick from the catalog, and "
-        "the DKM team runs shows, reviews, opportunities, and leaderboards "
-        "from custom admin pages. The Django rewrite kept every URL that "
-        "mattered, moved the data across with a migration script, and "
-        "deploys from main on Render.",
     },
 ]
 
