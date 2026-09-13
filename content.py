@@ -28,6 +28,10 @@ ABOUT = [
     "I keep a library of primary sources with the translator and license as "
     "first-class fields, and I would rather write a commit message a "
     "stranger can read a year later than a clever one.",
+    "Most importantly, I am a husband and a father, and that is the "
+    "part of the day I would not trade. My favorite book series is The "
+    "Stormlight Archive by Brandon Sanderson. I have read the whole run more "
+    "than once and will argue about it if asked.",
 ]
 
 PROJECTS = [
