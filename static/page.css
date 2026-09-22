@@ -113,6 +113,27 @@ p + p { text-indent: 1.6em; margin-top: -0.6em; }
 .project p + p { text-indent: 0; margin-top: 0; }
 .notes { font-size: 1.05rem; color: var(--ink-soft); }
 
+/* Rate card set like a table of contents: title, dotted leader, price. */
+.rates { margin: 0; }
+.rates dt {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-size: 1.3rem;
+  margin: 1.4rem 0 0.2rem;
+}
+.rates dt::before {
+  content: "";
+  order: 2;
+  flex: 1;
+  min-width: 2em;
+  border-bottom: 1px dotted var(--ink-soft);
+  transform: translateY(-0.25em);
+}
+.rate-title { order: 1; }
+.rate-price { order: 3; color: var(--oxblood); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rates dd { margin: 0; font-size: 1.05rem; color: var(--ink-soft); }
+
 .links { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.8rem; }
 
 @media (max-width: 600px) {

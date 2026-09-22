@@ -83,6 +83,51 @@ PROJECTS = [
     },
 ]
 
+PRICING_NOTE = (
+    "These are typical freelance rates in the United States, and they are "
+    "where my quotes start. Every site is scoped and priced in writing "
+    "before any work begins, and half is due up front."
+)
+
+PRICING = [
+    {
+        "title": "One-page site",
+        "price": "$2,500",
+        "body": "A single page that says who you are and how to reach you. "
+        "Design, copy layout, a contact form, and a domain pointed at it.",
+    },
+    {
+        "title": "Small business site",
+        "price": "$6,000",
+        "body": "Five to ten pages with a content management system so you "
+        "can edit your own text and photos. Includes a blog or news page.",
+    },
+    {
+        "title": "Online store",
+        "price": "$12,000",
+        "body": "Products, a cart, checkout with Stripe, order emails, and an "
+        "admin where you manage inventory.",
+    },
+    {
+        "title": "Custom web application",
+        "price": "$25,000 and up",
+        "body": "Accounts, dashboards, admin tools, and anything else that is "
+        "more software than brochure. Django, PostgreSQL, deployed on Render.",
+    },
+    {
+        "title": "Hourly work",
+        "price": "$100 an hour",
+        "body": "Fixes, new features, or a second pair of eyes on a site you "
+        "already have.",
+    },
+    {
+        "title": "Care plan",
+        "price": "$150 a month",
+        "body": "Hosting oversight, dependency updates, backups, and up to "
+        "two hours of small changes each month.",
+    },
+]
+
 LINKS = [
     ("GitHub", "https://github.com/cprentice9"),
     ("Email", "mailto:cprentice94@icloud.com"),

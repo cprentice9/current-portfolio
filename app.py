@@ -27,6 +27,8 @@ def create_app():
             portrait=content.PORTRAIT,
             about=content.ABOUT,
             projects=content.PROJECTS,
+            pricing_note=content.PRICING_NOTE,
+            pricing=content.PRICING,
             links=content.LINKS,
         )
 

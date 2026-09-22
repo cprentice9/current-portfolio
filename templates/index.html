@@ -39,6 +39,17 @@
   </section>
 
   <section>
+    <h2>Pricing</h2>
+    <p>{{ pricing_note }}</p>
+    <dl class="rates">
+      {% for tier in pricing %}
+      <dt><span class="rate-title">{{ tier.title }}</span><span class="rate-price">{{ tier.price }}</span></dt>
+      <dd>{{ tier.body }}</dd>
+      {% endfor %}
+    </dl>
+  </section>
+
+  <section>
     <h2>Contact</h2>
     <p>If you want to talk about any of this, these reach me.</p>
     <ul class="links">

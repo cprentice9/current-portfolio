@@ -21,6 +21,10 @@ def test_page_renders_every_section(client):
         assert project["repo"] in body
     for _label, href in content.LINKS:
         assert href in body
+    assert content.PRICING_NOTE in body
+    for tier in content.PRICING:
+        assert tier["title"] in body
+        assert tier["price"] in body
 
 
 def test_first_paragraph_gets_the_drop_cap(client):
