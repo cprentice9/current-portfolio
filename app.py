@@ -35,6 +35,8 @@ def create_app():
             not_included=content.NOT_INCLUDED,
             process=content.PROCESS,
             faq=content.FAQ,
+            colophon=content.COLOPHON,
+            source=content.SOURCE,
             links=content.LINKS,
         )
 

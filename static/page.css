@@ -152,6 +152,11 @@ p + p { text-indent: 1.6em; margin-top: -0.6em; }
 .faq dt:first-child { margin-top: 0; }
 .faq dd { margin: 0; }
 
+/* A book's closing note on how it was made: small, centered, set apart. */
+.colophon { margin-top: 5rem; text-align: center; font-size: 1rem; font-style: italic; color: var(--ink-soft); }
+.colophon p { max-width: 28rem; margin: 0 auto 0.8rem; }
+.colophon p + p { text-indent: 0; margin-top: 0; }
+
 .links { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.8rem; }
 
 @media (max-width: 600px) {

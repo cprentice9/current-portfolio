@@ -80,6 +80,12 @@
     </ul>
   </section>
 
+  <footer class="colophon">
+    <h2>Colophon</h2>
+    {% for para in colophon %}<p>{{ para }}</p>{% endfor %}
+    <p>The source is on GitHub at <a href="{{ source }}">{{ source.replace('https://github.com/', '') }}</a>.</p>
+  </footer>
+
 </main>
 </body>
 </html>

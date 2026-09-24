@@ -65,3 +65,13 @@ def test_hire_link_lands_on_pricing(client):
     body = client.get("/").get_data(as_text=True)
     assert 'href="#pricing"' in body
     assert 'id="pricing"' in body
+
+
+def test_colophon_renders_and_its_claims_hold(client):
+    response = client.get("/")
+    body = response.get_data(as_text=True)
+    for para in content.COLOPHON:
+        assert str(escape(para)) in body
+    assert f'href="{content.SOURCE}"' in body
+    assert "<script" not in body
+    assert "Set-Cookie" not in response.headers

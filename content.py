@@ -188,6 +188,17 @@ FAQ = [
      "me. I read and test every change before it reaches your site."),
 ]
 
+COLOPHON = [
+    "Set in EB Garamond, Georg Duffner's revival of the type Claude Garamont "
+    "cut in sixteenth-century Paris. Duffner worked from a specimen printed "
+    "in Frankfurt in 1592.",
+    "The page is one Flask route and one stylesheet. It runs no JavaScript "
+    "and sets no cookies, and the tests fail if that ever changes. Every word "
+    "on it lives in one Python file.",
+]
+
+SOURCE = "https://github.com/cprentice9/current-portfolio"
+
 LINKS = [
     ("GitHub", "https://github.com/cprentice9"),
     ("Email", "mailto:" + EMAIL),
