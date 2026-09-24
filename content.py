@@ -3,6 +3,7 @@
 NAME = "Connor Prentice"
 TAGLINE = "Django developer and full stack software engineer in Denton, Texas."
 PORTRAIT = "https://avatars.githubusercontent.com/u/60930043?v=4"
+EMAIL = "cprentice94@icloud.com"
 
 ABOUT = [
     "I am a Django developer. Most of my working hours go into one Django "
@@ -128,7 +129,66 @@ PRICING = [
     },
 ]
 
+# Prefilled in the email a visitor opens from a pricing tier.
+INQUIRY_BODY = (
+    "What the site is for:\n\n"
+    "When you need it:\n\n"
+    "What you already have, such as a domain, logo, or photos:\n"
+)
+
+INCLUDED = [
+    "You own the code and the content. At launch the repository moves to "
+    "your GitHub account.",
+    "Two rounds of design changes before I start building.",
+    "A layout that works on phones, page titles and descriptions for search "
+    "engines, and HTTPS.",
+    "Thirty days of free fixes after launch for anything that does not work "
+    "the way the quote describes.",
+]
+
+NOT_INCLUDED = [
+    "Hosting and the domain. You pay those companies directly, usually $10 "
+    "to $30 a month for hosting and about $15 a year for a domain.",
+    "Writing the words and taking the photos. I can write copy at the hourly "
+    "rate or point you to a writer or photographer.",
+    "Paid fonts, plugins, and stock photos. I bill those at cost.",
+    "Anything outside the written quote. I quote it separately or bill it "
+    "hourly.",
+]
+
+PROCESS = [
+    ("A call.", "Thirty minutes, free, about what the site needs to do and "
+     "who it is for."),
+    ("A written quote.", "Within three business days you get the scope, the "
+     "price, and the dates. Nothing starts until you sign it."),
+    ("The deposit.", "Half the price is due when you sign, and I start on the "
+     "date in the quote."),
+    ("The build.", "You get a preview link in the first week and a short "
+     "update by email every Friday."),
+    ("Launch.", "When you approve the preview, I put the site on your "
+     "domain. The second half is due then."),
+    ("After launch.", "Thirty days of fixes are free. After that, the care "
+     "plan or hourly work covers changes."),
+]
+
+FAQ = [
+    ("How long does a site take?", "About two weeks for a one-page site, "
+     "four to six weeks for a small business site, and six to ten for an "
+     "online store. Custom applications get dates in the quote."),
+    ("Do you work with clients outside Denton?", "Yes. Most of the work "
+     "happens over email and video calls. If you are in the Denton or Dallas "
+     "area, we can also meet in person."),
+    ("I already have a site. Can you work on it?", "Yes. I look at it first, "
+     "then either fix it at the hourly rate or quote a rebuild if a rebuild "
+     "costs less over a year or two."),
+    ("Can I update the site myself?", "The small business site and the online "
+     "store come with an admin where you edit text, photos, and products. "
+     "Changes to a one-page site go through me, hourly or on the care plan."),
+    ("Do you use AI?", "Yes. Coding agents do searches and routine edits for "
+     "me. I read and test every change before it reaches your site."),
+]
+
 LINKS = [
     ("GitHub", "https://github.com/cprentice9"),
-    ("Email", "mailto:cprentice94@icloud.com"),
+    ("Email", "mailto:" + EMAIL),
 ]

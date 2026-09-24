@@ -17,6 +17,7 @@
     <img class="portrait" src="{{ portrait }}" alt="Connor Prentice" width="112" height="112">
     <h1>{{ name }}</h1>
     <p class="tagline">{{ tagline }}</p>
+    <p class="hire"><a href="#pricing">Hire me to build your website</a></p>
   </header>
 
   <section>
@@ -38,14 +39,36 @@
     {% endfor %}
   </section>
 
-  <section>
+  <section id="pricing">
     <h2>Pricing</h2>
     <p>{{ pricing_note }}</p>
     <dl class="rates">
       {% for tier in pricing %}
       <dt><span class="rate-title">{{ tier.title }}</span><span class="rate-price">{{ tier.price }}</span></dt>
-      <dd>{{ tier.body }}</dd>
+      <dd>{{ tier.body }} <a href="mailto:{{ email }}?subject={{ ('Website inquiry: ' ~ tier.title)|urlencode }}&amp;body={{ inquiry_body|urlencode }}">Email me about this</a></dd>
       {% endfor %}
+    </dl>
+    <p class="list-head">Every price includes:</p>
+    <ul class="terms">
+      {% for item in included %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    <p class="list-head">Not included:</p>
+    <ul class="terms">
+      {% for item in not_included %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>How a project works</h2>
+    <ol class="steps">
+      {% for title, body in process %}<li><span class="step-title">{{ title }}</span> {{ body }}</li>{% endfor %}
+    </ol>
+  </section>
+
+  <section>
+    <h2>Questions</h2>
+    <dl class="faq">
+      {% for question, answer in faq %}<dt>{{ question }}</dt><dd>{{ answer }}</dd>{% endfor %}
     </dl>
   </section>
 

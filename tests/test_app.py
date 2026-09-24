@@ -1,4 +1,7 @@
+from urllib.parse import quote
+
 import pytest
+from markupsafe import escape
 
 import content
 from app import create_app
@@ -40,3 +43,25 @@ def test_security_headers(client):
     response = client.get("/")
     assert "default-src 'self'" in response.headers["Content-Security-Policy"]
     assert response.headers["X-Content-Type-Options"] == "nosniff"
+
+
+def test_hiring_sections_render(client):
+    body = client.get("/").get_data(as_text=True)
+    texts = content.INCLUDED + content.NOT_INCLUDED
+    for pair in content.PROCESS + content.FAQ:
+        texts += list(pair)
+    for text in texts:
+        assert str(escape(text)) in body
+
+
+def test_each_tier_has_an_email_link(client):
+    body = client.get("/").get_data(as_text=True)
+    for tier in content.PRICING:
+        subject = quote("Website inquiry: " + tier["title"])
+        assert f"mailto:{content.EMAIL}?subject={subject}&amp;body=" in body
+
+
+def test_hire_link_lands_on_pricing(client):
+    body = client.get("/").get_data(as_text=True)
+    assert 'href="#pricing"' in body
+    assert 'id="pricing"' in body

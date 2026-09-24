@@ -75,8 +75,9 @@ h1 {
   margin: 0 0 0.5rem;
 }
 .tagline { font-style: italic; color: var(--ink-soft); margin: 0; }
+.hire { margin: 1.2rem 0 0; }
 
-section { margin: 0 0 3.5rem; }
+section { margin: 0 0 3.5rem; scroll-margin-top: 2rem; }
 
 h2 {
   font-weight: 500;
@@ -133,6 +134,23 @@ p + p { text-indent: 1.6em; margin-top: -0.6em; }
 .rate-title { order: 1; }
 .rate-price { order: 3; color: var(--oxblood); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .rates dd { margin: 0; font-size: 1.05rem; color: var(--ink-soft); }
+.rates dd a { white-space: nowrap; }
+
+.list-head { margin: 2rem 0 0.4rem; }
+.terms { margin: 0; padding-left: 1.2em; }
+.terms li { margin: 0 0 0.4rem; }
+.terms li::marker { color: var(--ink-soft); }
+
+/* The steps are a real sequence, so they keep their numbers. */
+.steps { margin: 0; padding-left: 1.6em; }
+.steps li { margin: 0 0 0.8rem; padding-left: 0.3em; }
+.steps li::marker { color: var(--oxblood); }
+.step-title { font-style: italic; }
+
+.faq { margin: 0; }
+.faq dt { font-style: italic; margin: 1.4rem 0 0.2rem; }
+.faq dt:first-child { margin-top: 0; }
+.faq dd { margin: 0; }
 
 .links { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.8rem; }
 
