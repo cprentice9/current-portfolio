@@ -199,6 +199,9 @@ FAQ = [
     ("Can I update the site myself?", "The small business site and the online "
      "store come with an admin where you edit text, photos, and products. "
      "Changes to a one-page site go through me, hourly or on the care plan."),
+    ("How do I pay?", "By invoice, with a bank transfer or a card. Half is "
+     "due when you sign the quote and half at launch. The care plan is billed "
+     "monthly."),
     ("Do you use AI?", "Yes. Coding agents do searches and routine edits for "
      "me. I read and test every change before it reaches your site."),
 ]
