@@ -10,6 +10,14 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
 </head>
 <body>
+{% macro rate_card(items) %}
+    <dl class="rates">
+      {% for tier in items %}
+      <dt><span class="rate-title">{{ tier.title }}</span><span class="rate-price">{{ tier.price }}</span></dt>
+      <dd>{{ tier.body }} <a href="mailto:{{ email }}?subject={{ ('Website inquiry: ' ~ tier.title)|urlencode }}&amp;body={{ inquiry_body|urlencode }}">Email me about this</a></dd>
+      {% endfor %}
+    </dl>
+{% endmacro %}
 <main class="page">
   <p class="running-head">{{ name }}</p>
 
@@ -42,12 +50,9 @@
   <section id="pricing">
     <h2>Pricing</h2>
     <p>{{ pricing_note }}</p>
-    <dl class="rates">
-      {% for tier in pricing %}
-      <dt><span class="rate-title">{{ tier.title }}</span><span class="rate-price">{{ tier.price }}</span></dt>
-      <dd>{{ tier.body }} <a href="mailto:{{ email }}?subject={{ ('Website inquiry: ' ~ tier.title)|urlencode }}&amp;body={{ inquiry_body|urlencode }}">Email me about this</a></dd>
-      {% endfor %}
-    </dl>
+    {{ rate_card(pricing) }}
+    <p class="list-head">Add-ons for any site, priced per page:</p>
+    {{ rate_card(addons) }}
     <p class="list-head">Every price includes:</p>
     <ul class="terms">
       {% for item in included %}<li>{{ item }}</li>{% endfor %}

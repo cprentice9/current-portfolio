@@ -25,7 +25,7 @@ def test_page_renders_every_section(client):
     for _label, href in content.LINKS:
         assert href in body
     assert content.PRICING_NOTE in body
-    for tier in content.PRICING:
+    for tier in content.PRICING + content.ADDONS:
         assert tier["title"] in body
         assert tier["price"] in body
 
@@ -56,9 +56,10 @@ def test_hiring_sections_render(client):
 
 def test_each_tier_has_an_email_link(client):
     body = client.get("/").get_data(as_text=True)
-    for tier in content.PRICING:
+    for tier in content.PRICING + content.ADDONS:
         subject = quote("Website inquiry: " + tier["title"])
-        assert f"mailto:{content.EMAIL}?subject={subject}&amp;body=" in body
+        prompt = quote(content.INQUIRY_BODY)
+        assert f"mailto:{content.EMAIL}?subject={subject}&amp;body={prompt}" in body
 
 
 def test_hire_link_lands_on_pricing(client):

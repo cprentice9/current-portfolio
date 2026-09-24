@@ -129,6 +129,22 @@ PRICING = [
     },
 ]
 
+ADDONS = [
+    {
+        "title": "Copy editing",
+        "price": "$100 a page",
+        "body": "You write a draft of each page. I edit it for clarity, order, "
+        "and grammar, and write the titles and descriptions search engines "
+        "show.",
+    },
+    {
+        "title": "Copywriting",
+        "price": "$300 a page",
+        "body": "I interview you for about 45 minutes, then write each page "
+        "from scratch. You review every page before it goes live.",
+    },
+]
+
 # Prefilled in the email a visitor opens from a pricing tier.
 INQUIRY_BODY = (
     "What the site is for:\n\n"
@@ -149,8 +165,7 @@ INCLUDED = [
 NOT_INCLUDED = [
     "Hosting and the domain. You pay those companies directly, usually $10 "
     "to $30 a month for hosting and about $15 a year for a domain.",
-    "Writing the words and taking the photos. I can write copy at the hourly "
-    "rate or point you to a writer or photographer.",
+    "Photography. I can recommend a photographer.",
     "Paid fonts, plugins, and stock photos. I bill those at cost.",
     "Anything outside the written quote. I quote it separately or bill it "
     "hourly.",

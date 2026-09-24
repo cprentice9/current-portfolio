@@ -29,6 +29,7 @@ def create_app():
             projects=content.PROJECTS,
             pricing_note=content.PRICING_NOTE,
             pricing=content.PRICING,
+            addons=content.ADDONS,
             email=content.EMAIL,
             inquiry_body=content.INQUIRY_BODY,
             included=content.INCLUDED,
